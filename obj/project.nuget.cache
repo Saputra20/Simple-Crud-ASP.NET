@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "3KK+8c1gd8szgbTdrAX8i0bLsfSTCbEc4BTWMx7HOc/9YoivTeMFK05DtAPg9utaggPN4F70PYFRdY1VfBHmPg==",
+  "dgSpecHash": "/b2PH3s9653orjCq9SAgtysskS0VHquI2fyzGevf7DxywwFslThJKJYuSHcW96axgi8A5Ez896NhSf7U1jEzWQ==",
   "success": true,
   "projectFilePath": "/home/vodjo/Others/Dotnet/Simple Api/Simple Api.csproj",
   "expectedPackageFiles": [
+    "/home/vodjo/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
+    "/home/vodjo/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "/home/vodjo/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/vodjo/.nuget/packages/microsoft.aspnetcore.openapi/7.0.10/microsoft.aspnetcore.openapi.7.0.10.nupkg.sha512",
+    "/home/vodjo/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/home/vodjo/.nuget/packages/microsoft.entityframeworkcore/7.0.10/microsoft.entityframeworkcore.7.0.10.nupkg.sha512",
     "/home/vodjo/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.10/microsoft.entityframeworkcore.abstractions.7.0.10.nupkg.sha512",
     "/home/vodjo/.nuget/packages/microsoft.entityframeworkcore.analyzers/7.0.10/microsoft.entityframeworkcore.analyzers.7.0.10.nupkg.sha512",

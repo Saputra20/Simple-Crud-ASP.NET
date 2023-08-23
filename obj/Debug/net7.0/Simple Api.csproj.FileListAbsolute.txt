@@ -41,3 +41,5 @@
 /home/vodjo/Others/Dotnet/Simple Api/obj/Debug/net7.0/Simple Api.pdb
 /home/vodjo/Others/Dotnet/Simple Api/obj/Debug/net7.0/Simple Api.genruntimeconfig.cache
 /home/vodjo/Others/Dotnet/Simple Api/obj/Debug/net7.0/ref/Simple Api.dll
+/home/vodjo/Others/Dotnet/Simple Api/bin/Debug/net7.0/AutoMapper.dll
+/home/vodjo/Others/Dotnet/Simple Api/bin/Debug/net7.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll

@@ -4,6 +4,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.OpenApi.Models;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore.Design;
+using Simple_Api.Interfaces;
+using Simple_Api.Repositories;
+using Simple_Api.Mappings;
 
 namespace Simple_Api.Helpers
 {
@@ -22,6 +25,8 @@ namespace Simple_Api.Helpers
             services.AddControllers();
             // services.AddMvcCore().AddApiExplorer();
             services.AddDbContext<Database>(options => options.UseNpgsql(connectionString));
+            services.AddScoped<IRegionRepository, RegionRepositories>();
+            services.AddAutoMapper(typeof(AutoMapperRegion));
             // services.AddEndpointsApiExplorer();
             services.AddSwaggerGen(c =>
             {
