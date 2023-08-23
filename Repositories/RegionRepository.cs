@@ -10,10 +10,10 @@ using Simple_Api.Models.DTO.Region;
 
 namespace Simple_Api.Repositories
 {
-    public class RegionRepositories : IRegionRepository
+    public class RegionRepository : IRegionRepository
     {
         private readonly Database database;
-        public RegionRepositories(Database database)
+        public RegionRepository(Database database)
         {
             this.database = database;
         }

@@ -25,7 +25,8 @@ namespace Simple_Api.Helpers
             services.AddControllers();
             // services.AddMvcCore().AddApiExplorer();
             services.AddDbContext<Database>(options => options.UseNpgsql(connectionString));
-            services.AddScoped<IRegionRepository, RegionRepositories>();
+            services.AddScoped<IRegionRepository, RegionRepository>();
+            services.AddScoped<IDifficultyRepository, DifficultyRepository>();
             services.AddAutoMapper(typeof(AutoMapperRegion));
             // services.AddEndpointsApiExplorer();
             services.AddSwaggerGen(c =>
