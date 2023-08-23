@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Simple_Api.Helpers;
 using Simple_Api.Models.Domain;
 using Simple_Api.Models.DTO.Region;
@@ -17,18 +18,18 @@ namespace Simple_Api.Controllers
 
         [HttpGet]
         [ProducesResponseType(typeof(RegionResponse), StatusCodes.Status200OK)]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var regions = database.Regions.ToList();
+            var regions = await database.Regions.ToListAsync();
 
             return Ok(regions);
         }
 
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(RegionResponse), StatusCodes.Status200OK)]
-        public IActionResult FindOne(Guid id)
+        public async Task<IActionResult> FindOne(Guid id)
         {
-            var region = database.Regions.Find(id);
+            var region = await database.Regions.FindAsync(id);
 
             if (region == null)
             {
@@ -40,7 +41,7 @@ namespace Simple_Api.Controllers
 
         [HttpPost]
         [ProducesResponseType(typeof(RegionResponse), StatusCodes.Status201Created)]
-        public IActionResult Create([FromBody] RegionRequest Body)
+        public async Task<IActionResult> Create([FromBody] RegionRequest Body)
         {
             var regionBody = new Region
             {
@@ -49,8 +50,8 @@ namespace Simple_Api.Controllers
                 RegionImageUrl = Body.RegionImageUrl
             };
 
-            database.Regions.Add(regionBody);
-            database.SaveChanges();
+            await database.Regions.AddAsync(regionBody);
+            await database.SaveChangesAsync();
 
             var region = new RegionResponse
             {
@@ -66,9 +67,9 @@ namespace Simple_Api.Controllers
 
         [HttpPut("{id}")]
         [ProducesResponseType(typeof(RegionResponse), StatusCodes.Status200OK)]
-        public IActionResult Update(Guid id, [FromBody] RegionRequest Body)
+        public async Task<IActionResult> Update(Guid id, [FromBody] RegionRequest Body)
         {
-            var regionModel = database.Regions.Find(id);
+            var regionModel = await database.Regions.FindAsync(id);
 
             if (regionModel == null)
             {
@@ -79,7 +80,7 @@ namespace Simple_Api.Controllers
             regionModel.Code = Body.Code;
             regionModel.RegionImageUrl = Body.RegionImageUrl;
 
-            database.SaveChanges();
+            await database.SaveChangesAsync();
 
             var region = new RegionResponse
             {
@@ -95,16 +96,16 @@ namespace Simple_Api.Controllers
 
         [HttpDelete("{id}")]
         [ProducesResponseType(typeof(RegionResponse), StatusCodes.Status200OK)]
-        public IActionResult Delete(Guid id)
+        public async Task<IActionResult> Delete(Guid id)
         {
-            var regionModel = database.Regions.Find(id);
+            var regionModel = await database.Regions.FindAsync(id);
 
             if(regionModel == null){
                 return NotFound();
             }
 
             database.Regions.Remove(regionModel);
-            database.SaveChanges();
+            await database.SaveChangesAsync();
 
             var region = new RegionResponse
             {
